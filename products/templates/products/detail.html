@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <img
+        src="
+            {% if product.image %}
+                {{ product.image.url }}
+            {% else %}
+                https://www.amerikickkansas.com/wp-content/uploads/2017/04/default-image.jpg
+            {% endif %}
+        "
+        alt="Product Image" width="200" height="200" style="margin-right: 20px;"
+    >
+    <h1>{{ product.name }}</h1>
+    <h2>${{ product.price }}</h2>
+    <p>Categoría: <b>{{ product.category }}</b></p>
+    <p>Descripción: {% if product.desc %}{{ product.desc }}{% else %}Sin descripción{% endif %}</p>
+{% endblock content %}

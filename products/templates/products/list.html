@@ -16,7 +16,9 @@
                     "
                     alt="Product Image" width="50" height="50" style="margin-right: 20px;"
                 >
-                <span>{{product.name}} - $<b>{{product.price}}</b></span>
+                <a href="{{ product.get_absolute_url }}">
+                    <span>{{product.name}} - $<b>{{product.price}}</b></span>
+                </a>
             </li>
         {% endfor %}
         <h3>Total: {{ counter }}</h3>

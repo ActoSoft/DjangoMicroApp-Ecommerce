@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 CATEGORIES = (
     ('electronics', 'Electrónicos'),
@@ -21,3 +22,6 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.name} - ${self.price}'
+
+    def get_absolute_url(self):
+        return reverse('products:detail', args=[self.id])

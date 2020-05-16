@@ -21,3 +21,11 @@ class GetProducts(views.View):
             'category': category
         }
         return render(request, template_name, context)
+
+def GetProduct(request, id):
+    product = Product.objects.get(pk=id, is_active=True)
+    template_name = 'products/detail.html'
+    context = {
+        'product': product
+    }
+    return render(request, template_name, context)
