@@ -7,6 +7,9 @@
 </head>
 <body>
     <header>
+        <ul>
+            <a href="{% url 'products:list' %}"><li>Inicio</li></a>
+        </ul>
         <h1>Bienvenidos al E-Commerce hecho en Django en tiempo récord</h1>
         <div>
             <form action="{% url 'products:list' %}">
