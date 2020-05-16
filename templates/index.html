@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,9 @@
         <h1>Bienvenidos al E-Commerce hecho en Django en tiempo récord</h1>
         <div>
             <form action="{% url 'products:list' %}">
-                <input type="text" name="search" id="search" placeholder="Busca productos...">
+                <input type="text" name="search" id="search" placeholder="Busca productos..."
+                    value="{% if search %}{{ search }}{% endif %}"
+                >
                 <select name="category" id="category">
                     <option value="">Elige una categoría</option>
                     <option value="electronics">Electrónicos</option>
