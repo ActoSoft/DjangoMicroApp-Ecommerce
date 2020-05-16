@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django micro E-Commerce</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos al E-Commerce hecho en Django en tiempo récord</h1>
+        <div>
+            <form action="{% url 'products:list' %}">
+                <input type="text" name="search" id="search" placeholder="Busca productos...">
+                <select name="category" id="category">
+                    <option value="">Elige una categoría</option>
+                    <option value="electronics">Electrónicos</option>
+                    <option value="cameras">Cámaras</option>
+                    <option value="computers">Computadoras</option>
+                    <option value="cellphones">Celulares</option>
+                    <option value="accesories">Accesorios</option>
+                </select>
+                <input type="submit" value="Buscar!">
+            </form>
+            <a href="{% url 'products:list' %}"><button>Reiniciar filtros</button></a>
+        </div>
+    </header>
+    <main>
+        <div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </main>
+    <footer>
+        <p>Actosoft 2020</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h2>¡Productos disponbiles para ti!</h2>
+    <ul>
+    {% if counter > 0 %}
+        {% for product in products %}
+            <li style="list-style-type: none; margin: 30px 0; display: flex; align-items:center;">
+                <img
+                    src="
+                        {% if product.image %}
+                            {{ product.image.url }}
+                        {% else %}
+                            https://www.amerikickkansas.com/wp-content/uploads/2017/04/default-image.jpg
+                        {% endif %}
+                    "
+                    alt="Product Image" width="50" height="50" style="margin-right: 20px;"
+                >
+                <span>{{product.name}} - $<b>{{product.price}}</b></span>
+            </li>
+        {% endfor %}
+        <h3>Total: {{ counter }}</h3>
+    {%else%}
+        <h3>No hay productos, intenta con otro nombre</h3>
+    {% endif %}
+    </ul>
+{% endblock content %}
